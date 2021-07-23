@@ -3,6 +3,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
+  console.log('Hello world');
   return (
     <View style={styles.container}>
       <Text>This is my first app</Text>
