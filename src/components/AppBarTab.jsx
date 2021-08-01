@@ -8,6 +8,7 @@ const style = StyleSheet.create({
     paddingTop: 25,
     paddingBottom: 25,
     paddingLeft: 25,
+    flexGrow: 0,
   },
 });
 
