@@ -21,7 +21,10 @@ const AppBar = () => {
   return (
     <View style={styles.container}>
       <View style={styles.tabs}>
-        <AppBarTab tabTitle={'Repositories'} />
+        <AppBarTab tabTitle={'Repositories'} link='/' />
+      </View>
+      <View style={styles.tabs}>
+        <AppBarTab tabTitle={'Sign in'} link='sign-in' />
       </View>
     </View>
   );
