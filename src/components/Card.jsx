@@ -52,6 +52,7 @@ const cardFooterStyle = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     paddingTop: 5,
+    paddingBottom: 5,
   },
   text: {
     flexGrow: 0,
