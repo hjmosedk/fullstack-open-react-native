@@ -1,19 +1,35 @@
 import React from 'react';
-import {View, Text} from "react-native";
+import { View, StyleSheet } from 'react-native';
+import Card from './Card';
+import theme from '../theme';
 
-const RepositoryItem = ({repository}) => {
-    const {fullName, description, language, ratingAverage, reviewCount, stargazersCount, forksCount} = repository;
-    return (
-        <View>
-            <Text>Full name: {" "}{fullName}</Text>
-            <Text>Description: {" "}{description}</Text>
-            <Text>Language: {" "}{language}</Text>
-            <Text>Stars: {" "}{stargazersCount}</Text>
-            <Text>Forks: {" "}{forksCount}</Text>
-            <Text>Reviews: {" "}{reviewCount}</Text>
-            <Text>Rating: {" "}{ratingAverage}</Text>
-        </View>
-    );
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: theme.colors.white,
+  },
+});
+
+const RepositoryItem = ({ repository }) => {
+  return (
+    <View style={styles.container}>
+      <View>
+        <Card repository={repository} />
+      </View>
+    </View>
+  );
 };
 
 export default RepositoryItem;
+
+/*
+      <View style={styles.container}>
+        <View style={styles.imageContainer}>
+          <Image style={styles.image} source={{ uri: `${ownerAvatarUrl}` }} />
+        </View>
+        <View style={styles.mainText}>
+          <Text fontSize='Heading' fontWeight='bold'>
+            {fullName}
+          </Text>
+          <Text color='textSecondary'>{description}</Text>
+        </View>
+*/
