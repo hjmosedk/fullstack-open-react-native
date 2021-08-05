@@ -24,7 +24,7 @@ const RepositoryList = () => {
       data={repositoryNodes}
       ItemSeparatorComponent={ItemSeparator}
       renderItem={({ item }) => <RepositoryItem repository={item} />}
-      keyExtractor={(repository) => repository.id}
+      keyExtractor={(item) => item.fullName}
     />
   );
 };
