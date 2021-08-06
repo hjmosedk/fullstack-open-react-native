@@ -1,19 +1,13 @@
 import { gql } from '@apollo/client';
-//import { EDGE_NODE_REPO } from './fragments';
+import { REPOSITORY_FIELDS } from './fragments';
 
 export const GET_REPOSITORIES = gql`
-  query {
+  ${REPOSITORY_FIELDS}
+  query getAllRepositories {
     repositories {
       edges {
         node {
-          ownerAvatarUrl
-          fullName
-          description
-          language
-          stargazersCount
-          forksCount
-          reviewCount
-          ratingAverage
+          ...repositoryFields
         }
       }
     }
