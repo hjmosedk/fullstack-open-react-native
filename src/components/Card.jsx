@@ -71,10 +71,12 @@ const CardHead = ({ ownerAvatarUrl, fullName, description }) => {
         />
       </View>
       <View style={cardHeadStyles.mainText}>
-        <Text fontSize='Heading' fontWeight='bold'>
+        <Text testID='cardTitle' fontSize='Heading' fontWeight='bold'>
           {fullName}
         </Text>
-        <Text color='textSecondary'>{description}</Text>
+        <Text testID='cardDescription' color='textSecondary'>
+          {description}
+        </Text>
       </View>
     </View>
   );
@@ -84,6 +86,7 @@ const CardContent = ({ language }) => {
   return (
     <View style={cardContentStyle.container}>
       <Text
+        testID='language'
         style={cardContentStyle.text}
         color='white'
         background='blue'
@@ -99,7 +102,7 @@ const CardFooter = ({ number, description }) => {
   return (
     <View style={cardFooterStyle.container}>
       <View style={cardFooterStyle.text}>
-        <Text fontSize='Heading' fontWeight='bold'>
+        <Text testID='footerValue' fontSize='Heading' fontWeight='bold'>
           {transformedNumber(Number(number))}
         </Text>
         <Text color='textSecondary'>{description}</Text>
