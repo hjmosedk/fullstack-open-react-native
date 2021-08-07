@@ -7,6 +7,7 @@ export const GET_REPOSITORIES = gql`
     repositories {
       edges {
         node {
+          id
           ...repositoryFields
         }
       }
@@ -19,6 +20,17 @@ export const GET_AUTH_USER = gql`
     authorizedUser {
       id
       username
+    }
+  }
+`;
+
+export const GET_ONE_REPOSITORY = gql`
+  ${REPOSITORY_FIELDS}
+  query getOneRepository($id: ID!) {
+    repository(id: $id) {
+      ...repositoryFields
+      url
+      id
     }
   }
 `;

@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Pressable } from 'react-native';
+import { useHistory } from 'react-router-native';
 import Card from './Card';
 import theme from '../theme';
 
@@ -7,29 +8,26 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: theme.colors.white,
   },
+  view: {
+    padding: 15,
+  },
 });
 
-const RepositoryItem = ({ repository }) => {
+const RepositoryItem = ({ repository, button }) => {
+  const history = useHistory();
+  const { id } = repository;
+
+  const onPress = () => {
+    history.push(`/${id}`);
+  };
+
   return (
-    <View style={styles.container}>
-      <View>
-        <Card repository={repository} />
+    <Pressable style={styles.container} onLongPress={onPress}>
+      <View style={styles.view}>
+        <Card repository={repository} button={button} />
       </View>
-    </View>
+    </Pressable>
   );
 };
 
 export default RepositoryItem;
-
-/*
-      <View style={styles.container}>
-        <View style={styles.imageContainer}>
-          <Image style={styles.image} source={{ uri: `${ownerAvatarUrl}` }} />
-        </View>
-        <View style={styles.mainText}>
-          <Text fontSize='Heading' fontWeight='bold'>
-            {fullName}
-          </Text>
-          <Text color='textSecondary'>{description}</Text>
-        </View>
-*/

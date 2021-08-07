@@ -10,5 +10,7 @@ export const REPOSITORY_FIELDS = gql`
     forksCount
     reviewCount
     ratingAverage
+    url
+    id
   }
 `;
