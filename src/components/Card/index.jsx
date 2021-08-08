@@ -17,6 +17,10 @@ const cardFooterContainerStyle = StyleSheet.create({
   button: {
     flexGrow: 0,
   },
+  splitter: {
+    height: 10,
+    backgroundColor: '#e1e4e8',
+  },
 });
 
 const Card = ({ repository, button }) => {

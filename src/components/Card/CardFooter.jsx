@@ -35,7 +35,7 @@ const CardFooter = ({ number, description }) => {
     <View style={cardFooterStyle.container}>
       <View style={cardFooterStyle.text}>
         <Text testID='footerValue' fontSize='Heading' fontWeight='bold'>
-          {transformedNumber(Number(number))}
+          {transformedNumber(number)}
         </Text>
         <Text color='textSecondary'>{description}</Text>
       </View>

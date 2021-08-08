@@ -11,6 +11,10 @@ const styles = StyleSheet.create({
   view: {
     padding: 15,
   },
+  splitter: {
+    height: 10,
+    backgroundColor: theme.colors.background,
+  },
 });
 
 const RepositoryItem = ({ repository, button }) => {
@@ -26,6 +30,7 @@ const RepositoryItem = ({ repository, button }) => {
       <View style={styles.view}>
         <Card repository={repository} button={button} />
       </View>
+      {button && <View style={styles.splitter} />}
     </Pressable>
   );
 };
