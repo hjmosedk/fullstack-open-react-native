@@ -37,12 +37,19 @@ const AppBar = () => {
   return (
     <View style={styles.container}>
       <ScrollView horizontal style={styles.scroll}>
-        <AppBarTab tabTitle={'Repositories'} link='/' onPress={() => {}} />
+        <AppBarTab tabTitle='Repositories' link='/' onPress={() => {}} />
+        {authorizedUser && (
+          <AppBarTab
+            tabTitle='Create a review'
+            link='review'
+            onPress={() => {}}
+          />
+        )}
         {!authorizedUser && (
-          <AppBarTab tabTitle={'Sign in'} link='sign-in' onPress={() => {}} />
+          <AppBarTab tabTitle='Sign in' link='sign-in' onPress={() => {}} />
         )}
         {authorizedUser && (
-          <AppBarTab tabTitle={'Sign Out'} link='/' onPress={SignOut} />
+          <AppBarTab tabTitle='Sign Out' link='/' onPress={SignOut} />
         )}
       </ScrollView>
     </View>

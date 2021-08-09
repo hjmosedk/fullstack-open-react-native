@@ -6,6 +6,7 @@ import AppBar from './components/AppBar';
 import RepositoryList from './components/RepositoryList';
 import SingleRepository from './components/SingleRepository';
 import SignIn from './components/SignIn';
+import Review from './components/Review';
 
 import theme from './theme';
 
@@ -27,6 +28,9 @@ const Main = () => {
         </Route>
         <Route path='/sign-in' exact>
           <SignIn />
+        </Route>
+        <Route path='/review' exact>
+          <Review />
         </Route>
         <Route path='/:id' exact>
           <SingleRepository />
