@@ -42,27 +42,23 @@ const ReviewForm = ({ onSubmit }) => {
         <FormikTextInput
           name='ownerName'
           placeholder='Repository owner name'
-          style={styles.inputFields}
           color={'textSecondary'}
         />
         <FormikTextInput
           name='repositoryName'
           placeholder='Repository name'
-          style={styles.inputFields}
           color={'textSecondary'}
         />
         <FormikTextInput
           name='rating'
           placeholder='Rating between 0 and 100'
           keyboardType='number-pad'
-          style={styles.inputFields}
           color={'textSecondary'}
         />
         <FormikTextInput
           name='text'
           placeholder='Review'
           multiline
-          style={styles.inputFields}
           color={'textSecondary'}
         />
         <Button onPress={onSubmit} title='Create a review' />
@@ -89,8 +85,6 @@ const Review = () => {
 
   const onSubmit = async (values) => {
     const { repositoryName, ownerName, rating, text } = values;
-
-    console.log(values);
 
     try {
       const { data } = await createReview({

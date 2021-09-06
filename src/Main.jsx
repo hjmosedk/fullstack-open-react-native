@@ -7,6 +7,7 @@ import RepositoryList from './components/RepositoryList';
 import SingleRepository from './components/SingleRepository';
 import SignIn from './components/SignIn';
 import Review from './components/Review';
+import SignUp from './components/SignUp';
 
 import theme from './theme';
 
@@ -31,6 +32,9 @@ const Main = () => {
         </Route>
         <Route path='/review' exact>
           <Review />
+        </Route>
+        <Route path='/sign-up' exact>
+          <SignUp />
         </Route>
         <Route path='/:id' exact>
           <SingleRepository />

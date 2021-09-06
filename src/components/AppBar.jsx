@@ -46,7 +46,10 @@ const AppBar = () => {
           />
         )}
         {!authorizedUser && (
-          <AppBarTab tabTitle='Sign in' link='sign-in' onPress={() => {}} />
+          <AppBarTab tabTitle='Sign In' link='sign-in' onPress={() => {}} />
+        )}
+        {!authorizedUser && (
+          <AppBarTab tabTitle='Sign Up' link='sign-up' onPress={() => {}} />
         )}
         {authorizedUser && (
           <AppBarTab tabTitle='Sign Out' link='/' onPress={SignOut} />
