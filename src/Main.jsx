@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Route, Switch, Redirect } from 'react-router-native';
+import { Provider as PaperProvider } from 'react-native-paper';
 
 import AppBar from './components/AppBar';
 import RepositoryList from './components/RepositoryList';
@@ -21,27 +22,29 @@ const styles = StyleSheet.create({
 
 const Main = () => {
   return (
-    <View style={styles.container}>
-      <AppBar />
-      <Switch>
-        <Route path='/' exact>
-          <RepositoryList />
-        </Route>
-        <Route path='/sign-in' exact>
-          <SignIn />
-        </Route>
-        <Route path='/review' exact>
-          <Review />
-        </Route>
-        <Route path='/sign-up' exact>
-          <SignUp />
-        </Route>
-        <Route path='/:id' exact>
-          <SingleRepository />
-        </Route>
-        <Redirect to='/' />
-      </Switch>
-    </View>
+    <PaperProvider>
+      <View style={styles.container}>
+        <AppBar />
+        <Switch>
+          <Route path='/' exact>
+            <RepositoryList />
+          </Route>
+          <Route path='/sign-in' exact>
+            <SignIn />
+          </Route>
+          <Route path='/review' exact>
+            <Review />
+          </Route>
+          <Route path='/sign-up' exact>
+            <SignUp />
+          </Route>
+          <Route path='/:id' exact>
+            <SingleRepository />
+          </Route>
+          <Redirect to='/' />
+        </Switch>
+      </View>
+    </PaperProvider>
   );
 };
 
