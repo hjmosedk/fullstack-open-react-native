@@ -45,9 +45,10 @@ const styles = StyleSheet.create({
   },
 });
 
-const ReviewItem = ({ reviews }) => {
-  const { text, rating, createdAt, user } = reviews;
+const ReviewItem = ({ reviews, MyReviews }) => {
+  const { text, rating, createdAt, user, repository } = reviews;
   const { username } = user;
+  const { fullName } = repository;
   return (
     <View style={styles.container}>
       <View style={styles.view}>
@@ -62,9 +63,16 @@ const ReviewItem = ({ reviews }) => {
             </Text>
           </View>
           <View style={styles.infoBox}>
-            <Text fontSize='Heading' fontWeight='bold'>
-              {username}
-            </Text>
+            {!MyReviews && (
+              <Text fontSize='Heading' fontWeight='bold'>
+                {username}
+              </Text>
+            )}
+            {MyReviews && (
+              <Text fontSize='Heading' fontWeight='bold'>
+                {fullName}
+              </Text>
+            )}
             <Text color='textSecondary'>
               {format(parseISO(createdAt), 'y-MM-ii')}
             </Text>

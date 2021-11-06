@@ -9,6 +9,7 @@ import SingleRepository from './components/SingleRepository';
 import SignIn from './components/SignIn';
 import Review from './components/Review';
 import SignUp from './components/SignUp';
+import UserReviews from './components/UserReviews';
 
 import theme from './theme';
 
@@ -38,9 +39,13 @@ const Main = () => {
           <Route path='/sign-up' exact>
             <SignUp />
           </Route>
+          <Route path='/UserReviews' exact>
+            <UserReviews />
+          </Route>
           <Route path='/:id' exact>
             <SingleRepository />
           </Route>
+
           <Redirect to='/' />
         </Switch>
       </View>

@@ -33,10 +33,24 @@ export const GET_REPOSITORIES = gql`
 `;
 
 export const GET_AUTH_USER = gql`
-  query getAuthUser {
+  ${REVIEW_FIELDS}
+  query getAuthUser($includeReviews: Boolean = false) {
     authorizedUser {
       id
       username
+      reviews @include(if: $includeReviews) {
+        edges {
+          node {
+            ...reviewFields
+          }
+          cursor
+        }
+        pageInfo {
+          endCursor
+          startCursor
+          hasNextPage
+        }
+      }
     }
   }
 `;

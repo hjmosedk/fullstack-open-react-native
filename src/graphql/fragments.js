@@ -22,6 +22,9 @@ export const REVIEW_FIELDS = gql`
     rating
     createdAt
     repositoryId
+    repository {
+      fullName
+    }
     user {
       id
       username

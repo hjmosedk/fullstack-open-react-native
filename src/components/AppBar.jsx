@@ -45,6 +45,13 @@ const AppBar = () => {
             onPress={() => {}}
           />
         )}
+        {authorizedUser && (
+          <AppBarTab
+            tabTitle='My Reviews'
+            link='/userReviews'
+            onPress={() => {}}
+          />
+        )}
         {!authorizedUser && (
           <AppBarTab tabTitle='Sign In' link='sign-in' onPress={() => {}} />
         )}
